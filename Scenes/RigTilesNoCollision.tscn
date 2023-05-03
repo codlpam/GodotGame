@@ -1,0 +1,401 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Images/OilRigTileSet.png" type="Texture" id=1]
+
+[node name="RigTiles" type="Node"]
+
+[node name="Scaffolding" type="Node" parent="."]
+
+[node name="ScaffoldingLeft" type="Sprite" parent="Scaffolding"]
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[node name="ScaffoldingMiddle" type="Sprite" parent="Scaffolding"]
+position = Vector2( 24, 0 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 16, 0, 16, 16 )
+
+[node name="ScaffoldingRight" type="Sprite" parent="Scaffolding"]
+position = Vector2( 48, 0 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 32, 0, 16, 16 )
+
+[node name="BigScaffoldingBlue" type="Sprite" parent="Scaffolding"]
+position = Vector2( -40, 0 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 160, 192, 32, 32 )
+
+[node name="BigScaffoldingRed" type="Sprite" parent="Scaffolding"]
+position = Vector2( -80, 0 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 128, 192, 32, 32 )
+
+[node name="ScaffoldingRedSide" type="Sprite" parent="Scaffolding"]
+position = Vector2( -80, 48 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 144, 256, 16, 32 )
+
+[node name="ScaffoldingRedMiddle" type="Sprite" parent="Scaffolding"]
+position = Vector2( -56, 48 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 160, 256, 32, 32 )
+
+[node name="Barrels" type="Node" parent="."]
+
+[node name="BarrelGreen1" type="Sprite" parent="Barrels"]
+position = Vector2( 112, 0 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 64, 0, 16, 16 )
+
+[node name="BarrelGreen2" type="Sprite" parent="Barrels"]
+position = Vector2( 136, 0 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 80, 0, 16, 16 )
+
+[node name="BarrelRed1" type="Sprite" parent="Barrels"]
+position = Vector2( 112, 24 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 64, 16, 16, 16 )
+
+[node name="BarrelRed2" type="Sprite" parent="Barrels"]
+position = Vector2( 136, 24 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 80, 16, 16, 16 )
+
+[node name="Ladders" type="Node" parent="."]
+
+[node name="Ladder" type="Sprite" parent="Ladders"]
+position = Vector2( 72, 0 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 160, 48, 16, 16 )
+
+[node name="RopeLadder" type="Sprite" parent="Ladders"]
+position = Vector2( 72, 24 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 288, 48, 32, 16 )
+
+[node name="Railing" type="Node" parent="."]
+
+[node name="RailingLeft" type="Sprite" parent="Railing"]
+position = Vector2( 0, 24 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 16, 16, 16 )
+
+[node name="RailingMiddle" type="Sprite" parent="Railing"]
+position = Vector2( 24, 24 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 16, 16, 16, 16 )
+
+[node name="RailingRight" type="Sprite" parent="Railing"]
+position = Vector2( 48, 24 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 32, 16, 16, 16 )
+
+[node name="Pipe" type="Node" parent="."]
+
+[node name="PipeMiddle" type="Sprite" parent="Pipe"]
+position = Vector2( 40, 48 )
+rotation = 1.5708
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 288, 256, 16, 16 )
+
+[node name="PipeEnd" type="Sprite" parent="Pipe"]
+position = Vector2( 16, 64 )
+rotation = 3.14159
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 304, 272, 16, 16 )
+
+[node name="Blocks" type="Node" parent="."]
+
+[node name="Sqare" type="Sprite" parent="Blocks"]
+position = Vector2( 72, 48 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 128, 144, 32, 32 )
+
+[node name="Floor" type="Sprite" parent="Blocks"]
+position = Vector2( 104, 48 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 160, 144, 32, 32 )
+
+[node name="PipeSquare" type="Sprite" parent="Blocks"]
+position = Vector2( 72, 80 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 64, 112, 32, 32 )
+
+[node name="PipeFloor" type="Sprite" parent="Blocks"]
+position = Vector2( 104, 80 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 32, 112, 32, 32 )
+
+[node name="PipeFloor2" type="Sprite" parent="Blocks"]
+position = Vector2( 136, 80 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 112, 32, 32 )
+
+[node name="Heli" type="Node" parent="."]
+
+[node name="Helipad" type="Sprite" parent="Heli"]
+position = Vector2( 176, -8 )
+scale = Vector2( 1.16667, 1.16667 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 48, 64, 48 )
+
+[node name="Heliscaffolding" type="Sprite" parent="Heli"]
+position = Vector2( 208, 56 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 21, 96, 42, 16 )
+
+[node name="Door" type="Node" parent="."]
+
+[node name="Doorway" type="Sprite" parent="Door"]
+position = Vector2( 56, 72 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 288, 192, 32, 32 )
+
+[node name="Door-Top" type="Sprite" parent="Door"]
+position = Vector2( 16, 72 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 288, 176, 32, 16 )
+
+[node name="Door-Side" type="Sprite" parent="Door"]
+position = Vector2( 16, 96 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 272, 176, 16, 16 )
+
+[node name="Terminal" type="Node" parent="."]
+
+[node name="Terminal-Top1" type="Sprite" parent="Terminal"]
+position = Vector2( 32, 120 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 224, 288, 48, 16 )
+
+[node name="Terminal-Top2" type="Sprite" parent="Terminal"]
+position = Vector2( 88, 120 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 224, 304, 48, 16 )
+
+[node name="Terminal-Side" type="Sprite" parent="Terminal"]
+position = Vector2( -8, 120 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 192, 288, 32, 32 )
+
+[node name="Terminal-Bottom" type="Sprite" parent="Terminal"]
+position = Vector2( 32, 144 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 32, 304, 48, 16 )
+
+[node name="LightTower" type="Node" parent="."]
+
+[node name="LightTop" type="Sprite" parent="LightTower"]
+position = Vector2( 272, 0 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 80, 208, 48, 48 )
+
+[node name="LightRailing" type="Sprite" parent="LightTower"]
+position = Vector2( 336, 0 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 208, 48, 32 )
+
+[node name="LightPillar" type="Sprite" parent="LightTower"]
+position = Vector2( 336, 40 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 240, 48, 16 )
+
+[node name="Tower" type="Node" parent="."]
+
+[node name="TowerTop" type="Sprite" parent="Tower"]
+position = Vector2( 192, 88 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 256, 48, 32 )
+
+[node name="TowerMiddle" type="Sprite" parent="Tower"]
+position = Vector2( 248, 88 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 32, 288, 16, 16 )
+
+[node name="TowerLight" type="Sprite" parent="Tower"]
+position = Vector2( 280, 88 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 288, 32, 16 )
+
+[node name="TowerSide" type="Sprite" parent="Tower"]
+position = Vector2( 248, 112 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 48, 288, 16, 16 )
+
+[node name="Crane" type="Node" parent="."]
+
+[node name="CraneCenter" type="Sprite" parent="Crane"]
+position = Vector2( 488, 120 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 192, 96, 48, 48 )
+
+[node name="CraneBack" type="Sprite" parent="Crane"]
+position = Vector2( 448, 120 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 48, 240, 32, 48 )
+
+[node name="CranePlatform" type="Sprite" parent="Crane"]
+position = Vector2( 480, 176 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 208, 48, 16, 16 )
+
+[node name="CranePlatformSide" type="Sprite" parent="Crane"]
+position = Vector2( 456, 176 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 192, 48, 16, 16 )
+
+[node name="CraneBack2" type="Sprite" parent="Crane"]
+position = Vector2( 376, 136 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 192, 144, 32, 32 )
+
+[node name="CraneChain" type="Sprite" parent="Crane"]
+position = Vector2( 584, 176 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 160, 96, 16, 16 )
+
+[node name="CraneChainAngle" type="Sprite" parent="Crane"]
+position = Vector2( 424, 96 )
+rotation = 0.785398
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 160, 96, 16, 16 )
+
+[node name="CraneHook" type="Sprite" parent="Crane"]
+position = Vector2( 584, 200 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 176, 96, 16, 16 )
+
+[node name="CraneScaffolding" type="Sprite" parent="Crane"]
+position = Vector2( 568, 152 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 160, 80, 32, 16 )
+
+[node name="CraneScaffolding2" type="Sprite" parent="Crane"]
+position = Vector2( 544, 152 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 176, 64, 16, 16 )
+
+[node name="CraneTopWheel" type="Sprite" parent="Crane"]
+position = Vector2( 472, 64 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 192, 64, 16, 16 )
+
+[node name="CraneTopScaffold" type="Sprite" parent="Crane"]
+position = Vector2( 472, 112 )
+rotation = 4.71239
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 144, 80, 16, 16 )

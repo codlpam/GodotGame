@@ -1,0 +1,129 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Images/boat.png" type="Texture" id=1]
+[ext_resource path="res://Images/Oceanbg.png" type="Texture" id=2]
+[ext_resource path="res://Tilemaps/RigTiles.tres" type="TileSet" id=3]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Images/wasd-removebg-preview.png" type="Texture" id=5]
+[ext_resource path="res://Images/arrowkeys-removebg-preview (2).png" type="Texture" id=6]
+[ext_resource path="res://Images/space-removebg-preview.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Dag/Idle0.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/StoryBox.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scripts/IntroDialog/StoryTeller.gd" type="Script" id=10]
+[ext_resource path="res://Scripts/Intro.gd" type="Script" id=11]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 20.5, 14 )
+
+[node name="Intro" type="Node"]
+script = ExtResource( 11 )
+
+[node name="Background" type="Node" parent="."]
+
+[node name="Oceanbg" type="Sprite" parent="Background"]
+position = Vector2( 512, 288 )
+texture = ExtResource( 2 )
+
+[node name="Wasd-removebg-preview" type="Sprite" parent="Background"]
+position = Vector2( 296, 317 )
+scale = Vector2( 0.0931264, 0.0931264 )
+texture = ExtResource( 5 )
+
+[node name="Arrowkeys-removebg-preview(2)" type="Sprite" parent="Background"]
+position = Vector2( 334, 317 )
+scale = Vector2( 0.0955911, 0.0955911 )
+texture = ExtResource( 6 )
+
+[node name="Space-removebg-preview" type="Sprite" parent="Background"]
+position = Vector2( 381, 324 )
+scale = Vector2( 0.2, 0.15 )
+texture = ExtResource( 7 )
+
+[node name="Move" type="Label" parent="Background"]
+margin_left = 283.0
+margin_top = 295.0
+margin_right = 411.0
+margin_bottom = 316.0
+rect_scale = Vector2( 0.623406, 0.623406 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Movement Keys"
+
+[node name="Move2" type="Label" parent="Background"]
+margin_left = 370.0
+margin_top = 307.0
+margin_right = 406.0
+margin_bottom = 321.0
+rect_scale = Vector2( 0.623406, 0.623406 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Shoot"
+
+[node name="Boat" type="Sprite" parent="Background"]
+position = Vector2( 390, 370.189 )
+scale = Vector2( 0.039692, 0.039692 )
+texture = ExtResource( 1 )
+flip_h = true
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="Floor" type="StaticBody2D" parent="Walls"]
+position = Vector2( 389, 373 )
+scale = Vector2( 13.3205, -0.454104 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Floor"]
+shape = SubResource( 1 )
+
+[node name="Wall1" type="StaticBody2D" parent="Walls"]
+position = Vector2( 269, 334 )
+rotation = 1.5708
+scale = Vector2( 4.16047, -0.454104 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall1"]
+shape = SubResource( 1 )
+
+[node name="Wall2" type="StaticBody2D" parent="Walls"]
+position = Vector2( 509, 338 )
+rotation = 1.5708
+scale = Vector2( 4.16047, -0.454104 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall2"]
+shape = SubResource( 1 )
+
+[node name="TileMap" type="TileMap" parent="."]
+visible = false
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 458807, 23, 0, 458811, 536870935, 0, 655410, 536870915, 0, 655411, 536870917, 0, 655417, 24, 0, 655419, 536870936, 0, 720945, 1073741825, 0, 720946, 1610612737, 0, 720947, 1610612737, 0, 720948, 1610612737, 0, 720949, 1610612737, 0, 720950, 1610612737, 0, 720951, 1610612737, 0, 720952, 1610612737, 0, 720953, 1610612737, 0, 720954, 1610612737, 0, 720955, 1610612737, 0, 720956, 1610612737, 0, 720957, 1610612737, 0, 720958, 1610612737, 0, 720959, 1610612737, 0, 786483, 1610612750, 0, 786485, 536870919, 0, 786490, 536870925, 0, 786494, 1610612750, 0, 852019, 1610612750, 0, 852021, 536870919, 0, 852026, 536870925, 0, 852029, 536870917, 0, 852030, 1610612750, 0, 917554, 536870923, 0, 917555, 1610612750, 0, 917557, 536870919, 0, 917559, 536870923, 0, 917560, 536870922, 0, 917561, 536870922, 0, 917562, 536870925, 0, 917564, 536870917, 0, 917565, 536870917, 0, 917566, 1610612750, 0, 983090, 1073741825, 0, 983091, 1073741825, 0, 983092, 1610612737, 0, 983093, 1610612737, 0, 983094, 1610612737, 0, 983095, 1610612737, 0, 983096, 1610612737, 0, 983097, 1610612737, 0, 983098, 1610612737, 0, 983099, 1610612737, 0, 983100, 1610612737, 0, 983101, 1610612737, 0, 983102, 1610612750, 0, 1048628, 1610612750, 0, 1048630, -2147483626, 0, 1048634, -2147483626, 0, 1048638, 1610612750, 0, 1114164, 1610612750, 0, 1114174, 1610612750, 0, 1179700, 1610612749, 0, 1179702, -2147483626, 0, 1179704, 1610612756, 0, 1179706, -2147483628, 0, 1179710, 1610612750, 0, 1245236, 1610612750, 0, 1245246, 1610612750, 0, 1310772, 1610612750, 0, 1310774, -1073741803, 0, 1310776, -1610612715, 0, 1310782, 1610612750, 0, 1376308, 1610612750, 0, 1376309, 536870913, 0, 1376310, 536870913, 0, 1376311, 536870913, 0, 1376312, 536870913, 0, 1376313, 536870919, 0, 1376318, 1610612750, 0, 1441844, 1610612750, 0, 1441846, -1073741803, 0, 1441848, -1610612715, 0, 1441849, 536870919, 0, 1441854, 1610612750, 0, 1507380, 1610612750, 0, 1507384, -1610612715, 0, 1507385, 536870919, 0, 1507388, 536870916, 0, 1507389, 536870916, 0, 1507390, 1610612750, 0, 1572916, 1610612750, 0, 1572917, 536870913, 0, 1572918, 536870913, 0, 1572919, 536870913, 0, 1572920, 536870913, 0, 1572921, 536870913, 0, 1572922, 536870913, 0, 1572923, 536870913, 0, 1572924, 536870913, 0, 1572925, 536870913, 0, 1572926, 1610612750, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 318, 354 )
+
+[node name="StoryTeller" type="Area2D" parent="."]
+position = Vector2( 473, 356 )
+script = ExtResource( 10 )
+
+[node name="Sprite" type="Sprite" parent="StoryTeller"]
+modulate = Color( 0.768627, 0.968627, 0.572549, 1 )
+position = Vector2( 6, -3 )
+scale = Vector2( 0.4375, 0.4375 )
+texture = ExtResource( 8 )
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StoryTeller"]
+position = Vector2( -6.5, -3 )
+shape = SubResource( 2 )
+
+[node name="StoryBox" parent="StoryTeller" instance=ExtResource( 9 )]
+visible = false
+margin_left = -62.0
+margin_top = -105.0
+margin_right = 450.0
+margin_bottom = 71.0
+rect_scale = Vector2( 0.406057, 0.406057 )
+skip_to_scene = "res://Scenes/Level1.tscn"
+story_line_file = "res://Dialog/script.txt"
+
+[connection signal="body_entered" from="StoryTeller" to="StoryTeller" method="_on_StoryTeller_body_entered"]
+[connection signal="body_exited" from="StoryTeller" to="StoryTeller" method="_on_StoryTeller_body_exited"]

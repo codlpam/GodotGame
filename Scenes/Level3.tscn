@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Tilemaps/RigTiles.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Images/Oceanbg.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Dag/Idle0.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/StoryBoxEnd.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/EndScene.gd" type="Script" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 11, 116.25 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 20.5, 14 )
+
+[node name="EndScene" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="Oceanbg" type="Sprite" parent="."]
+position = Vector2( 280, 131 )
+texture = ExtResource( 3 )
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( -91, 1 )
+scale = Vector2( 2, 2 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 14 )
+format = 1
+tile_data = PoolIntArray( 4, 23, 0, 8, 536870935, 0, 196613, 24, 0, 196615, 536870969, 0, 196616, 536870936, 0, 262149, 24, 0, 262151, 536870969, 0, 262152, 536870936, 0, 327685, 24, 0, 327687, 536870969, 0, 327688, 536870936, 0, 393221, 24, 0, 393223, 536870969, 0, 393224, 536870936, 0, 458757, 24, 0, 458759, 536870969, 0, 458760, 536870936, 0, 524293, 24, 0, 524295, 536870969, 0, 524296, 536870936, 0, 589829, 24, 0, 589831, 536870969, 0, 589832, 536870936, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 161, 37 )
+
+[node name="Wall1" type="StaticBody2D" parent="."]
+position = Vector2( -91, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall1"]
+position = Vector2( 118, 22 )
+shape = SubResource( 1 )
+
+[node name="Wall2" type="StaticBody2D" parent="."]
+position = Vector2( -91, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
+position = Vector2( 391, 29 )
+shape = SubResource( 1 )
+
+[node name="StoryTellerEnd" type="Area2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="StoryTellerEnd"]
+modulate = Color( 0.768627, 0.968627, 0.572549, 1 )
+position = Vector2( 239, 36 )
+scale = Vector2( 0.4375, 0.4375 )
+texture = ExtResource( 4 )
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StoryTellerEnd"]
+position = Vector2( 226.5, 36 )
+shape = SubResource( 4 )
+
+[node name="StoryBoxEnd" parent="StoryTellerEnd" instance=ExtResource( 5 )]
+visible = false
+margin_left = 106.0
+margin_top = -71.0
+margin_right = 618.0
+margin_bottom = 105.0
+rect_scale = Vector2( 0.480149, 0.480149 )
+story_line_file = "res://Dialog/scriptEnd.txt"
+
+[connection signal="body_entered" from="StoryTellerEnd" to="." method="_on_StoryTellerEnd_body_entered"]
+[connection signal="body_exited" from="StoryTellerEnd" to="." method="_on_StoryTellerEnd_body_exited"]

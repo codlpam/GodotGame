@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/PlayerRunning.mp3-d7d360534609a0dcb5e781264084320a.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Player/PlayerRunning.mp3"
+dest_files=[ "res://.import/PlayerRunning.mp3-d7d360534609a0dcb5e781264084320a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,214 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Scripts/Mainhud.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Pies/steak.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Pies/mince.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Pies/butterChicken.png" type="Texture" id=4]
+[ext_resource path="res://Fonts/Oswald-Regular.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Sprites/Heart/Heart.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Fireball/Fireball0.png" type="Texture" id=7]
+[ext_resource path="res://theme/ui.theme" type="Theme" id=8]
+[ext_resource path="res://Scenes/PauseMenu.tscn" type="PackedScene" id=9]
+
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("NotificationAnimation:editor_description")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("PopupPanel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "modulate"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("PopupPanel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 1.1, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="DynamicFont" id=5]
+size = 30
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 40
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 25
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 25
+font_data = ExtResource( 5 )
+
+[node name="Mainhud" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="HUD" instance=ExtResource( 9 )]
+
+[node name="NotificationAnimation" type="AnimationPlayer" parent="HUD"]
+anims/RESET = SubResource( 6 )
+anims/modulate = SubResource( 7 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="PopupPanel" type="PopupPanel" parent="HUD"]
+visible = true
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 0, 0, 0, 0.784314 )
+margin_left = 454.0
+margin_top = 363.0
+margin_right = 553.0
+margin_bottom = 413.0
+theme = ExtResource( 8 )
+custom_styles/panel = SubResource( 8 )
+
+[node name="Notifications" type="Label" parent="HUD/PopupPanel"]
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 96.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 5 )
+text = "Test"
+align = 1
+
+[node name="FireBallPanel" type="Panel" parent="HUD"]
+self_modulate = Color( 0, 0, 0, 0.54902 )
+margin_left = 826.0
+margin_top = 510.0
+margin_right = 1001.0
+margin_bottom = 582.0
+theme = ExtResource( 8 )
+
+[node name="fireBall" type="Sprite" parent="HUD/FireBallPanel"]
+position = Vector2( 51, 36 )
+scale = Vector2( 2.125, 2.125 )
+texture = ExtResource( 7 )
+
+[node name="FireballTimer" type="Label" parent="HUD/FireBallPanel"]
+margin_left = 99.0
+margin_top = 8.0
+margin_right = 167.0
+margin_bottom = 63.0
+custom_fonts/font = SubResource( 4 )
+text = "0:00"
+
+[node name="LivesPanel" type="Panel" parent="HUD"]
+self_modulate = Color( 1, 1, 1, 0.352941 )
+margin_left = 21.0
+margin_top = 15.0
+margin_right = 217.0
+margin_bottom = 62.0
+theme = ExtResource( 8 )
+
+[node name="Lives" type="Label" parent="HUD/LivesPanel"]
+margin_left = 11.0
+margin_top = 6.0
+margin_right = 80.0
+margin_bottom = 41.0
+custom_fonts/font = SubResource( 1 )
+text = "Lives: 3"
+
+[node name="Heart1" type="Sprite" parent="HUD/LivesPanel"]
+position = Vector2( 109, 24 )
+scale = Vector2( 0.0498434, 0.0498434 )
+texture = ExtResource( 6 )
+
+[node name="Heart2" type="Sprite" parent="HUD/LivesPanel"]
+position = Vector2( 141, 24 )
+scale = Vector2( 0.0498434, 0.0498434 )
+texture = ExtResource( 6 )
+
+[node name="Heart3" type="Sprite" parent="HUD/LivesPanel"]
+position = Vector2( 173, 24 )
+scale = Vector2( 0.0498434, 0.0498434 )
+texture = ExtResource( 6 )
+
+[node name="Score" type="Label" parent="HUD"]
+visible = false
+margin_left = 320.0
+margin_top = 16.0
+margin_right = 400.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 2 )
+text = "Score:"
+
+[node name="PiesPanel" type="Panel" parent="HUD"]
+self_modulate = Color( 1, 1, 1, 0.352941 )
+margin_left = 591.0
+margin_top = 15.0
+margin_right = 998.0
+margin_bottom = 62.0
+theme = ExtResource( 8 )
+
+[node name="PiesCollect" type="Label" parent="HUD/PiesPanel"]
+margin_left = 18.0
+margin_top = 5.0
+margin_right = 149.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 3 )
+text = "Pies Collected"
+
+[node name="PieMince" type="Sprite" parent="HUD/PiesPanel"]
+position = Vector2( 290, 21 )
+texture = ExtResource( 3 )
+
+[node name="PieButterChicken" type="Sprite" parent="HUD/PiesPanel"]
+position = Vector2( 366, 20 )
+texture = ExtResource( 4 )
+
+[node name="PieSteak" type="Sprite" parent="HUD/PiesPanel"]
+position = Vector2( 208, 20 )
+texture = ExtResource( 2 )
+
+[connection signal="animation_finished" from="HUD/NotificationAnimation" to="." method="_on_NotificationAnimation_animation_finished"]

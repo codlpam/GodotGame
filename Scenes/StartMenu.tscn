@@ -1,0 +1,115 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Sprites/Dag/Run0.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Dag/Run2.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Dag/Run4.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Dag/Run3.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Dag/Run5.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Dag/Run1.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Dag/Idle0.png" type="Texture" id=7]
+[ext_resource path="res://Images/Oceanbg.png" type="Texture" id=8]
+[ext_resource path="res://Tilemaps/RigTiles.tres" type="TileSet" id=9]
+[ext_resource path="res://Fonts/Oswald-Regular.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://Scripts/StartMenu.gd" type="Script" id=11]
+
+[sub_resource type="DynamicFont" id=1]
+size = 70
+outline_size = 2
+outline_color = Color( 0.00784314, 0.00784314, 0.00784314, 1 )
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 26
+font_data = ExtResource( 10 )
+
+[sub_resource type="AnimatedTexture" id=3]
+frames = 6
+frame_0/texture = ExtResource( 1 )
+frame_1/texture = ExtResource( 6 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 2 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 4 )
+frame_3/delay_sec = 0.0
+frame_4/texture = ExtResource( 3 )
+frame_4/delay_sec = 0.0
+frame_5/texture = ExtResource( 5 )
+frame_5/delay_sec = 0.0
+
+[sub_resource type="DynamicFont" id=4]
+size = 26
+font_data = ExtResource( 10 )
+
+[node name="StartMenu" type="Control"]
+margin_right = 1024.0
+margin_bottom = 600.0
+script = ExtResource( 11 )
+
+[node name="Oceanbg" type="Sprite" parent="."]
+position = Vector2( 532, 297 )
+scale = Vector2( 0.935185, 0.935185 )
+texture = ExtResource( 8 )
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 579, 269 )
+scale = Vector2( 0.611336, 0.611336 )
+tile_set = ExtResource( 9 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -196576, 1073741847, 0, -196572, 1610612759, 0, -65502, 1073741848, 0, -65500, 1610612760, 0, 34, 1073741848, 0, 36, 1610612760, 0, 65569, 1610612738, 0, 65570, 1, 0, 65571, 1, 0, 65572, 1, 0, 65573, 1, 0, 65574, 1, 0, 65575, 1, 0, 131100, 1610612742, 0, 131106, 1610612750, 0, 131107, 536870915, 0, 131108, 536870917, 0, 131111, 13, 0, 196634, 0, 0, 196635, 1, 0, 196636, 1, 0, 196637, 1, 0, 196638, 7, 0, 196639, 1, 0, 196640, 1, 0, 196641, 1, 0, 196642, 1610612750, 0, 196643, 1, 0, 196644, 1610612737, 0, 196645, 1610612736, 0, 196647, 13, 0, 262173, 13, 0, 262174, 7, 0, 262178, 536870926, 0, 262179, -1073741803, 0, 262183, 13, 0, 327709, 13, 0, 327710, 7, 0, 327711, 536870913, 0, 327712, 536870913, 0, 327713, 536870913, 0, 327714, 536870926, 0, 327719, 13, 0, 393243, 1610612756, 0, 393245, 536870934, 0, 393247, 21, 0, 393248, 1610612743, 0, 393249, 22, 0, 393250, 1610612750, 0, 393251, 20, 0, 393255, 13, 0, 458781, 536870926, 0, 458784, 1610612743, 0, 458785, 1, 0, 458786, 1, 0, 458787, 1, 0, 458788, 1, 0, 458789, 1, 0, 458790, 1, 0, 458791, 13, 0, 524315, -1610612715, 0, 524317, 13, 0, 524320, 1610612743, 0, 524322, 13, 0, 524327, 13, 0, 589853, 13, 0, 589856, 1610612743, 0, 589858, 13, 0, 589863, 13, 0, 655387, -1610612715, 0, 655389, 13, 0, 655392, 1610612743, 0, 655394, 13, 0, 655399, 13, 0, 720925, 13, 0, 720927, 1610612737, 0, 720928, 1610612737, 0, 720929, 1610612737, 0, 720930, 13, 0, 720935, 13, 0, 786461, 13, 0, 786466, 13, 0 )
+
+[node name="Title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -220.0
+margin_top = 200.0
+margin_right = 220.0
+margin_bottom = 199.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Dag's Pie Rescue"
+align = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -132.0
+margin_right = 142.0
+margin_bottom = 72.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 274.0
+margin_bottom = 230.0
+custom_constants/separation = 10
+
+[node name="StartGameButton" type="Button" parent="MarginContainer/VBoxContainer"]
+margin_right = 274.0
+margin_bottom = 70.0
+custom_fonts/font = SubResource( 2 )
+text = "Start Game"
+icon = SubResource( 3 )
+icon_align = 2
+
+[node name="OptionsButton" type="Button" parent="MarginContainer/VBoxContainer"]
+margin_top = 80.0
+margin_right = 274.0
+margin_bottom = 150.0
+custom_fonts/font = SubResource( 4 )
+text = "Options"
+icon = ExtResource( 7 )
+icon_align = 2
+
+[node name="QuitGameButton" type="Button" parent="MarginContainer/VBoxContainer"]
+margin_top = 160.0
+margin_right = 274.0
+margin_bottom = 230.0
+custom_fonts/font = SubResource( 4 )
+text = "Quit Game"
+icon = ExtResource( 7 )
+icon_align = 2
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/StartGameButton" to="." method="_on_StartGameButton_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitGameButton" to="." method="_on_QuitGameButton_pressed"]
